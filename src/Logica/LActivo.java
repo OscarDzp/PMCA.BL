@@ -11,9 +11,17 @@ import java.util.ArrayList;
  * @author karii
  */
 public class LActivo {
+  private int idActivo;
   private clsActivo obActivo;
   private OpActivos obOperaciones;
-  
+
+    public int getIdActivo() {
+        return idActivo;
+    }
+
+    public void setIdActivo(int idActivo) {
+        this.idActivo = idActivo;
+    }
     public clsActivo getObActivo() {
         return obActivo;
     }
@@ -21,25 +29,35 @@ public class LActivo {
     public void setObActivo(clsActivo obActivo) {
         this.obActivo = obActivo;
     }
+    public LActivo (){
+        this.obOperaciones = new OpActivos();
+    }
 
     public LActivo(clsActivo obActivo) {
         this.obActivo = obActivo;
         this.obOperaciones = new OpActivos();
     }
+    public LActivo(int idActivo){
+        this.idActivo = idActivo;
+        this.obOperaciones = new OpActivos();
+        
+    }
+    
   public boolean Guardar() {
       return this.obOperaciones.Guardar(this.obActivo);
       
   }
+ 
   public boolean Actualizar(){
       return this.obOperaciones.Actualizar(this.obActivo);
       
   }
   public clsActivo Consultar(){
-      return this.obOperaciones.Consultar(this.obActivo.getIdActivo());
+      return this.obOperaciones.Consultar(this.idActivo);
       
   }
   public boolean Eliminar(){
-      return this.obOperaciones.Eliminar(this.obActivo.getIdActivo());
+      return this.obOperaciones.Eliminar(this.idActivo);
       
   }
   public ArrayList<clsActivo> Listar(){
