@@ -11,10 +11,12 @@ import java.util.ArrayList;
  * @author karii
  */
 public class LActivo {
+    //atributos
   private int idActivo;
   private clsActivo obActivo;
   private OpActivos obOperaciones;
 
+  //get and set
     public int getIdActivo() {
         return idActivo;
     }
@@ -29,6 +31,15 @@ public class LActivo {
     public void setObActivo(clsActivo obActivo) {
         this.obActivo = obActivo;
     }
+
+    public OpActivos getObOperaciones() {
+        return obOperaciones;
+    }
+
+    public void setObOperaciones(OpActivos obOperaciones) {
+        this.obOperaciones = obOperaciones;
+    }
+//constructores
     public LActivo (){
         this.obOperaciones = new OpActivos();
     }
