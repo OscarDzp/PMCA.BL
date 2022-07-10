@@ -44,7 +44,7 @@ public class LEmpleados {
     }
 
     public boolean Guardar() {
-        return this.obOperaciones.Guarda(this.obEmpleado);
+        return this.obOperaciones.Guardar(this.obEmpleado);
     }
 
     public boolean Actualizar() {
